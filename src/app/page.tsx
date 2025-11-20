@@ -1,5 +1,6 @@
 // app/page.tsx
 import CardEvent from "../components/ui/CardEvent";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
 
                 {/* EVENTOS */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Link href="/event">
                     <CardEvent
                         title="Asado Domingo"
                         date="Nov 30, 2025"
@@ -29,6 +31,8 @@ export default function Home() {
                         estimatedPrice={1000}
                         spentPrice={1100}
                     />
+                    </Link>
+                    <Link href="/event">
                     <CardEvent
                         title="Viaje a las vegas"
                         date="Dec 5, 2025"
@@ -36,6 +40,7 @@ export default function Home() {
                         estimatedPrice={100000}
                         spentPrice={20000}
                     />
+                    </Link>
                 </div>
             </section>
         </main>
