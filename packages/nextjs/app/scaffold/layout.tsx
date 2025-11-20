@@ -1,4 +1,3 @@
-import BottomNav from "../components/ui/BottomNav";
 import "@rainbow-me/rainbowkit/styles.css";
 import "@scaffold-ui/components/styles.css";
 import { ScaffoldEthAppWithProviders } from "~~/components/ScaffoldEthAppWithProviders";
@@ -7,7 +6,7 @@ import "~~/styles/globals.css";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
 export const metadata = getMetadata({
-  title: "LemiPay App",
+  title: "Scaffold-ETH 2 App",
   description: "Built with 🏗 Scaffold-ETH 2",
 });
 
@@ -16,11 +15,7 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
     <html suppressHydrationWarning className={``}>
       <body>
         <ThemeProvider enableSystem>
-          <ScaffoldEthAppWithProviders>
-            <main className="flex-grow pb-32 pt-4">{children}</main>
-          </ScaffoldEthAppWithProviders>
-
-          <BottomNav />
+          <ScaffoldEthAppWithProviders>{children}</ScaffoldEthAppWithProviders>
         </ThemeProvider>
       </body>
     </html>
