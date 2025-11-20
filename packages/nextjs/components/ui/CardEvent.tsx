@@ -18,21 +18,6 @@ export default function CardEvent({ title, date, description, estimatedPrice, sp
   const borderColor =
     percentage < 50 ? "border-secondary/30" : percentage < 80 ? "border-accent/40" : "border-primary/60";
 
-  // 📌 Alertas
-  let alertMessage = "";
-  let alertColor = "";
-  let alertIcon = null;
-
-  if (percentage >= 90) {
-    alertMessage = "⚠️ ¡Estás al límite del presupuesto!";
-    alertColor = "text-primary font-semibold";
-    alertIcon = "🔥";
-  } else if (percentage >= 70) {
-    alertMessage = "Tené cuidado, estás gastando mucho…";
-    alertColor = "text-accent font-medium";
-    alertIcon = "⚠️";
-  }
-
   return (
     <div
       className={`
@@ -63,13 +48,6 @@ export default function CardEvent({ title, date, description, estimatedPrice, sp
       </div>
 
       <div className="mt-1 text-xs text-base-content">{percentage.toFixed(0)}% del presupuesto usado</div>
-
-      {/* ALERTA */}
-      {alertMessage && (
-        <div className={`mt-3 p-2 rounded-md bg-base-200 ${alertColor}`}>
-          {alertIcon} {alertMessage}
-        </div>
-      )}
 
       <div className="flex justify-end mt-4">
         <button className="px-3 py-1 text-primary-content bg-primary hover:bg-primary-focus rounded-md text-sm">

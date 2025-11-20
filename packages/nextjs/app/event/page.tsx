@@ -1,5 +1,6 @@
 "use client";
 
+import FABMenu from "../../components/ui/FABMenu";
 import ProgressCard from "../../components/ui/ProgressCard";
 import { Plus, Users } from "lucide-react";
 
@@ -116,11 +117,7 @@ export default function EventPage() {
       </div>
 
       {/* FAB — AGREGAR GASTO */}
-      <div className="fixed bottom-24 right-6">
-        <button className="w-16 h-16 rounded-full bg-p text-pc shadow-xl flex items-center justify-center hover:scale-110 transition">
-          <Plus size={32} />
-        </button>
-      </div>
+      <FABMenu />
     </div>
   );
 }
