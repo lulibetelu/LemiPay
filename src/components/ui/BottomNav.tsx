@@ -15,20 +15,20 @@ export default function BottomNav() {
             max-w-xs w-full
             z-50
         ">
-            <button className="flex flex-col items-center text-neutral hover:text-primary transition">
+            <Link href="/" className="flex flex-col items-center text-neutral hover:text-primary transition">
                 <Calendar size={24} />
                 <span className="text-[11px] mt-1">Your Events</span>
-            </button>
+            </Link>
 
             <Link href="/create-event" className="flex flex-col items-center hover:text-primary transition">
                 <PlusCircle size={22} />
                 <span className="text-[11px]">Create Event</span>
             </Link>
 
-            <button className="flex flex-col items-center text-neutral hover:text-primary transition">
+            <Link href="/profile" className="flex flex-col items-center text-neutral hover:text-primary transition">
                 <User size={24} />
                 <span className="text-[11px] mt-1">Profile</span>
-            </button>
+            </Link>
         </div>
     );
 }

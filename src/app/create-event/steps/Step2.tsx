@@ -25,7 +25,7 @@ export default function Step2({ data, setData, onNext, onPrev }: any) {
                     </label>
                     <input
                         type="number"
-                        className="input input-bordered w-full rounded-xl focus:input-primary"
+                        className="input input-bordered w-full pl-4 rounded-xl focus:input-primary"
                         placeholder="Ej: 40000"
                         value={data.budget}
                         onChange={(e) =>
@@ -36,12 +36,6 @@ export default function Step2({ data, setData, onNext, onPrev }: any) {
 
                 {/* Fondo común toggle */}
                 <div className="flex flex-col gap-1">
-                    <label
-                        className="text-sm font-medium text-base-content tooltip tooltip-top"
-                        data-tip="Activa esta opción si el presupuesto es total para el grupo. Si está desactivado, el presupuesto será por persona."
-                    >
-                        Fondo común
-                    </label>
 
                     <div className="flex items-center justify-between bg-base-100 border border-base-300 rounded-xl p-3">
                         <span className="flex items-center gap-2 text-sm">

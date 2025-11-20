@@ -22,7 +22,7 @@ export default function Step1({ data, setData, onNext }: any) {
                         <Type size={16} /> Nombre del evento
                     </label>
                     <input
-                        className="input input-bordered w-full rounded-xl focus:input-primary"
+                        className="input input-bordered w-full pl-4 rounded-xl focus:input-primary"
                         placeholder="Ej: Cumpleaños de María"
                         value={data.name}
                         onChange={(e) =>
@@ -35,14 +35,13 @@ export default function Step1({ data, setData, onNext }: any) {
                 <div className="flex flex-col gap-1">
                     <label
                         className="text-sm font-medium flex items-center gap-2 text-base-content tooltip tooltip-right"
-                        data-tip="Ese día tu evento se dará por finalizado automáticamente."
                     >
                         <Calendar size={16} /> Fecha de finalización
                     </label>
 
                     <input
                         type="date"
-                        className="input input-bordered w-full rounded-xl focus:input-primary"
+                        className="input input-bordered pl-4 w-full rounded-xl focus:input-primary"
                         value={data.date}
                         onChange={(e) =>
                             setData({ ...data, date: e.target.value })
@@ -56,7 +55,7 @@ export default function Step1({ data, setData, onNext }: any) {
                         <FileText size={16} /> Descripción (opcional)
                     </label>
                     <textarea
-                        className="textarea textarea-bordered rounded-xl w-full focus:textarea-primary"
+                        className="textarea pl-4 textarea-bordered rounded-xl w-full focus:textarea-primary"
                         placeholder="Ej: Fiesta en casa, temática retro..."
                         value={data.description}
                         onChange={(e) =>

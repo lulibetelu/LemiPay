@@ -6,7 +6,6 @@ import Step2 from "./steps/Step2";
 import Step3 from "./steps/Step3";
 import {StepPips} from "@/components/ui/StepPips";
 import FloatingBottomNav from "../../components/ui/FloatingBottomNav";
-import StepHeader from "../../components/ui/StepHeader";
 
 export default function CreateEventPage() {
     const [step, setStep] = useState(0);
@@ -40,7 +39,6 @@ export default function CreateEventPage() {
 
     return (
         <div className="min-h-screen bg-base-200/50 p-4 pb-32">
-            <StepHeader title="Crear evento" subtitle="Sigue los pasos para crearlo" />
 
             <div className="max-w-lg mx-auto mt-6 space-y-4">
                 <div className="flex justify-center mb-2">

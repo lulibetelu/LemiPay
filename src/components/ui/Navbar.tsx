@@ -12,19 +12,6 @@ export default function Navbar() {
                     🍋 LemiPay
                 </Link>
 
-                {/* Links */}
-                <div className="hidden sm:flex gap-4">
-                    <Link href="#" className="text-neutral hover:text-primary transition">
-                        Inicio
-                    </Link>
-                    <Link href="#" className="text-neutral hover:text-primary transition">
-                        Eventos
-                    </Link>
-                    <Link href="#" className="text-neutral hover:text-primary transition">
-                        Contacto
-                    </Link>
-                </div>
-
                 {/* Avatar */}
                 <div className="w-9 h-9 rounded-full bg-primary text-primary-content flex items-center justify-center shadow-md">
                     U
