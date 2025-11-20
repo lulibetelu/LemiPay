@@ -1,66 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// app/page.tsx
+import CardEvent from "../components/ui/CardEvent";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <main className="min-h-screen px-6 py-10 bg-gradient-to-b from-[#f7f8ff] to-[#ffffff]">
+            <section className="max-w-5xl mx-auto space-y-10">
+
+                {/* HERO */}
+                <div className="text-center space-y-4">
+                    <h1 className="text-5xl font-extrabold text-primary drop-shadow-sm">
+                        Tus eventos
+                    </h1>
+
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Acá puedes ver los eventos de los cuales formas parte
+                    </p>
+                </div>
+
+                {/* SEPARADOR */}
+                <div className="h-[2px] w-24 bg-primary/40 rounded-full mx-auto"></div>
+
+                {/* EVENTOS */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <CardEvent
+                        title="Asado Domingo"
+                        date="Nov 30, 2025"
+                        description="Asado en la casa de Chimu"
+                        estimatedPrice={1000}
+                        spentPrice={1100}
+                    />
+                    <CardEvent
+                        title="Viaje a las vegas"
+                        date="Dec 5, 2025"
+                        description="Nos vamos a apostar"
+                        estimatedPrice={100000}
+                        spentPrice={20000}
+                    />
+                </div>
+            </section>
+        </main>
+    );
 }

@@ -1,0 +1,35 @@
+// components/ui/Navbar.tsx
+import React from "react";
+import Link from "next/link";
+
+export default function Navbar() {
+    return (
+        <div className="w-full bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-200">
+            <div className="flex justify-between items-center px-4 py-3 max-w-5xl mx-auto">
+
+                {/* Logo */}
+                <Link href="/" className="text-xl font-bold text-primary">
+                    🍋 LemiPay
+                </Link>
+
+                {/* Links */}
+                <div className="hidden sm:flex gap-4">
+                    <Link href="#" className="text-neutral hover:text-primary transition">
+                        Inicio
+                    </Link>
+                    <Link href="#" className="text-neutral hover:text-primary transition">
+                        Eventos
+                    </Link>
+                    <Link href="#" className="text-neutral hover:text-primary transition">
+                        Contacto
+                    </Link>
+                </div>
+
+                {/* Avatar */}
+                <div className="w-9 h-9 rounded-full bg-primary text-primary-content flex items-center justify-center shadow-md">
+                    U
+                </div>
+            </div>
+        </div>
+    );
+}
