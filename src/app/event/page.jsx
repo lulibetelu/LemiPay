@@ -65,7 +65,7 @@ export default function EventPage() {
             </div>
 
             {/* CARD INTEGRANTES */}
-            <div className="px-6 mb-6"> {/* solo padding lateral y margin */}
+            <div className="px-6 mt-6 mb-6"> {/* solo padding lateral y margin */}
                 <h2 className="text-lg font-semibold text-bc mb-3 flex items-center gap-2">
                     <Users size={20} /> Integrantes
                 </h2>
