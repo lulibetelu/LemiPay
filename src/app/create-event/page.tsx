@@ -43,7 +43,7 @@ export default function CreateEventPage() {
             <StepHeader title="Crear evento" subtitle="Sigue los pasos para crearlo" />
 
             <div className="max-w-lg mx-auto mt-6 space-y-4">
-                <div className="sm:hidden flex justify-center mb-2">
+                <div className="flex justify-center mb-2">
                     <StepPips current={step} total={3} />
                 </div>
 
