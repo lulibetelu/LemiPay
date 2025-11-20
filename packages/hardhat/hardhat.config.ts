@@ -52,6 +52,12 @@ const config: HardhatUserConfig = {
         url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
       },
+      accounts: [
+        {
+          privateKey: "0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6",
+          balance: "10000000000000000000000", // 10,000 ETH
+        },
+      ],
     },
     mainnet: {
       url: "https://mainnet.rpc.buidlguidl.com",

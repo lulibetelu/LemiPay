@@ -44,6 +44,8 @@
     "precommit": "lint-staged",
     "start": "yarn workspace @se-2/nextjs dev",
     "test": "yarn hardhat:test",
+    "testpool": "hardhat run scripts/test_event_pool.ts --network localhost",
+    "testpool-erc20": "hardhat run scripts/test_event_pool_erc20.ts --network localhost",
     "vercel": "yarn workspace @se-2/nextjs vercel",
     "vercel:login": "yarn workspace @se-2/nextjs vercel:login",
     "vercel:yolo": "yarn workspace @se-2/nextjs vercel:yolo",

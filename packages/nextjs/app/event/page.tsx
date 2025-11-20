@@ -1,17 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import ProgressCard from "../../components/ui/ProgressCard";
 import { Plus, Users } from "lucide-react";
 
 export default function EventPage() {
-  const [isPersonal, setIsPersonal] = useState(false);
-  const progress = 320 / 500; // ejemplo temporal
-  const barWidth = `${Math.min(progress * 100, 100)}%`;
-
   return (
-    <div className="ml-15 mr-15 mt-5 min-h-screen bg-b1 flex flex-col pb-24">
+    <div className="ml-5 mr-5 mt-5 min-h-screen bg-b1 flex flex-col pb-24">
       {/* TÍTULO DEL EVENTO */}
-      <h1 className="text-2xl font-bold text-bc px-4 mb-3">Nombre de evento</h1>
+      <h1 className="text-2xl font-bold text-bc px-4 mb-3 text-center justify-center">Nombre de evento</h1>
 
       <div className="px-4 py-3 text-center">
         <div className="w-full flex flex-col items-center justify-center">
@@ -28,23 +24,7 @@ export default function EventPage() {
       </div>
 
       {/* CARD PROGRESO */}
-      <div className="bg-b2 rounded-2xl shadow-md border border-base-300 p-5 mx-4 mb-4">
-        {/* Toggle */}
-        <div className="flex items-center gap-3 mb-3">
-          <input
-            type="checkbox"
-            className="toggle toggle-accent"
-            checked={isPersonal}
-            onChange={() => setIsPersonal(!isPersonal)}
-          />
-          <span className="text-bc font-medium text-sm">{isPersonal ? "Gastos por persona" : "Gastos totales"}</span>
-        </div>
-
-        {/* Progress bar */}
-        <div className="w-full h-4 bg-base-200 rounded-xl overflow-hidden border border-base-300 shadow-inner mb-2">
-          <div className="h-full bg-p transition-all duration-500" style={{ width: barWidth }} />
-        </div>
-      </div>
+      <ProgressCard />
 
       {/* CARD INTEGRANTES */}
       <div className="px-6 mt-6 mb-6">
@@ -74,23 +54,62 @@ export default function EventPage() {
         <h2 className="text-lg font-semibold text-bc mb-3">Historial de gastos</h2>
 
         <div className="flex flex-col gap-3">
-          {[1, 2, 3].map(item => (
+          {[
+            {
+              id: 1,
+              title: "Carne para el asado",
+              subtitle: "Gastón • 12 Feb · Fondo común",
+              icon: "🥩",
+              amount: 15000,
+              justified: true,
+              source: "Fondo",
+            },
+            {
+              id: 2,
+              title: "Bebidas",
+              subtitle: "Martina • 12 Feb · Personal",
+              icon: "🍺",
+              amount: 5000,
+              justified: false,
+              source: "Personal",
+            },
+            {
+              id: 3,
+              title: "Parrilla y carbón",
+              subtitle: "Facundo • 12 Feb · Fondo común",
+              icon: "🔥",
+              amount: 7000,
+              justified: true,
+              source: "Fondo",
+            },
+          ].map(event => (
             <div
-              key={item}
-              className="rounded-2xl bg-white shadow-[0px_4px_12px_rgba(0,0,0,0.08)] p-4 flex items-center justify-between border border-base-200"
+              key={event.id}
+              className="rounded-2xl bg-white shadow-[0px_4px_12px_rgba(0,0,0,0.08)] p-4 flex flex-col gap-2 border border-base-200"
             >
               {/* Izquierda */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-base-200 flex items-center justify-center">🍕</div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-base-200 flex items-center justify-center">{event.icon}</div>
 
-                <div className="flex flex-col leading-tight">
-                  <span className="font-semibold text-base text-bc">Pizza</span>
-                  <span className="text-xs text-gray-500">Facundo • 12 Feb · Fondo común</span>
+                  <div className="flex flex-col leading-tight">
+                    <span className="font-semibold text-base text-bc">{event.title}</span>
+                    <span className="text-xs text-gray-500">{event.subtitle}</span>
+                  </div>
                 </div>
+
+                {/* Derecha */}
+                <span className="text-base font-bold text-p">$ {event.amount.toLocaleString()}</span>
               </div>
 
-              {/* Derecha */}
-              <span className="text-base font-bold text-p">$ 2.500</span>
+              {/* Justificación o botón */}
+              {event.justified ? (
+                <span className="text-xs text-green-600 font-medium">Gasto Aprobado ✅</span>
+              ) : (
+                <button className="text-xs text-white bg-blue-600 px-3 py-1 rounded-full self-start hover:bg-blue-700">
+                  Aprobar gasto
+                </button>
+              )}
             </div>
           ))}
         </div>
